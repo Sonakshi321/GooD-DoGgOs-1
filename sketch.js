@@ -207,7 +207,7 @@ if(keyDown(DOWN_ARROW)) {
   pittie1.y=1100;
 }
 
-pittie1.debug=true;
+pittie1.debug=false;
 pittie1.setCollider("rectangle",0,0,pittie1.width,pittie1.height);
 
 if(keyWentUp("up")||keyWentUp("down")){
@@ -229,6 +229,14 @@ if (gameState===2){
   //}
 
   //pittie1.velocityY = pittie1.velocityY + 0.8
+
+}
+
+function mouseClicked(nxt1){
+
+  gameState = 2;
+  console.log(frameCount);
+ 
 
 }
 
@@ -331,6 +339,13 @@ text("Click On The Screen To Start",1180,50);
  
 }
 
+if(gameState===2){
+  
+  textSize(20);
+text("Press Up arrow to jump",1180,90);
+ 
+}
+
   
   if(gameState===4){
   
@@ -359,7 +374,7 @@ function spawnBaddies(){
     baddy.scale=0.65;
     baddy.lifetime=600;
     baddyGroup.add(baddy);
-    baddy.debug=true;
+    baddy.debug=false;
     baddy.setCollider("rectangle",0,0,baddy.width,baddy.height);
     
   }
